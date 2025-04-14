@@ -4,8 +4,8 @@ FROM odoo:18
 # Cambiar al usuario root para poder instalar dependencias
 USER root
 
-# Instalar dependencias necesarias
-RUN apt-get update && apt-get install -y \
+# Actualizar el sistema y las dependencias
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libpq-dev \
     libxml2-dev \
     libxslt1-dev \
