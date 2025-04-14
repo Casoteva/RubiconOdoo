@@ -1,3 +1,0 @@
-git add .
-git commit -m "Añadir carpeta addons con .gitkeep"
-git push origin main
