@@ -5,8 +5,7 @@ FROM odoo:18
 USER root
 
 # Actualizar el sistema y las dependencias
-RUN apt-get update && apt-get upgrade -y && apt-get install -y \
-    libpq-dev \
+RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libxslt1-dev \
     libldap2-dev \
