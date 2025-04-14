@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  odoo:
+    build: .
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=dpg-cvune8i4d50c73bjil3g-a.oregon-postgres.render.com
+      - USER=base_gr_user
+      - PASSWORD=29U4FJ412tBDlzgy2KvDFr5EvEEwMti4
+      - DB_NAME=base_gr
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./odoo.conf:/etc/odoo/odoo.conf
