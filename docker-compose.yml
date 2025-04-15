@@ -5,11 +5,12 @@ services:
     build: .
     ports:
       - "8069:8069"
+      - "8072:8072"
     environment:
       - HOST=dpg-cvune8i4d50c73bjil3g-a.oregon-postgres.render.com
       - USER=base_gr_user
       - PASSWORD=29U4FJ412tBDlzgy2KvDFr5EvEEwMti4
-      - DB_NAME=base_gr
+      - DB_NAME=base_gr_new
     volumes:
       - ./addons:/mnt/extra-addons
-      - ./odoo.conf:/etc/odoo/odoo.conf
+      - ./etc/odoo.conf:/etc/odoo/odoo.conf
