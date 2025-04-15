@@ -1,10 +1,10 @@
 # Usar la imagen base oficial de Odoo 18
 FROM odoo:18
 
-# Cambiar al usuario root para poder instalar dependencias
+# Cambiar al usuario root para instalar dependencias adicionales
 USER root
 
-# Actualizar el sistema y las dependencias
+# Instalar librerías necesarias
 RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libxslt1-dev \
@@ -17,14 +17,11 @@ RUN apt-get update && apt-get install -y \
 # Volver al usuario odoo
 USER odoo
 
-# Copiar archivo de configuración odoo.conf
+# Copiar archivo de configuración
 COPY ./etc/odoo.conf /etc/odoo/odoo.conf
 
-# Copiar los addons personalizados
+# Copiar tus addons personalizados
 COPY ./addons /mnt/extra-addons
 
-# Exponer el puerto 8069
-EXPOSE 8069
-
-# Iniciar Odoo con la configuración proporcionada
-CMD odoo --update=all --stop-after-init -c /etc/odoo/odoo.conf
+# Comando por defecto: actualizar todos los módulos y apagar
+CMD ["odoo", "--update=all", "--stop-after-init", "-c", "/etc/odoo/odoo.conf"]
