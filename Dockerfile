@@ -27,4 +27,4 @@ COPY ./addons /mnt/extra-addons
 EXPOSE 8069
 
 # Iniciar Odoo con la configuración proporcionada
-CMD ["odoo", "-c", "/etc/odoo/odoo.conf"]
+CMD odoo --update=all --stop-after-init -c /etc/odoo/odoo.conf
