@@ -24,4 +24,4 @@ COPY ./etc/odoo.conf /etc/odoo/odoo.conf
 COPY ./addons /mnt/extra-addons
 
 # Comando por defecto: actualizar todos los módulos y apagar
-CMD ["odoo", "--update=all", "--stop-after-init", "-c", "/etc/odoo/odoo.conf"]
+CMD ["odoo", "-c", "/etc/odoo/odoo.conf"]
